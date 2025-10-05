@@ -4,6 +4,8 @@ hik_camera:
     
     camera_info_url: ""
     
-    exposure_time: 10000.0
+    exposure_time: 7000.0
     gain: 10.0
     frame_rate: 60.0
+    pixel_format: "BayerRG8"
+    #Optional: BayerRG8 BayerRG10 BayerRG12 Mono8 Mono12 YUV422_Packed RGB8 BGR8

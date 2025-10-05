@@ -51,7 +51,8 @@
 在运行前，请确保你已经正确配置了参数文件。
 
 1.  **配置参数**:
-    打开文件 `config/camera_params.yaml`，修改以下关键参数：
+
+    打开文件 `install/hik_camera_ros2/share/hik_camera_ros2/config/camera_params.yaml`，修改以下关键参数：
     - `camera_sn`: **必须**修改为你相机的实际Serial Number。
     - `camera_info_url`: (可选) 相机标定文件的路径。
 

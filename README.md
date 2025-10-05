@@ -13,8 +13,8 @@
 ## ⚙️ 环境要求
 
 - Ubuntu 22.04
-- ROS2 Humble Hawksbill
-- OpenCV (通常随ROS2 Desktop Full一同安装)
+- ROS2 Humble
+- OpenCV
 - MVS Runtime: 虽然项目编译**不依赖**外部SDK，但**运行时**目标机器上需要安装海康MVS的**运行库(Runtime)**。请从[海康机器人官网](https://www.hikrobotics.com/cn/machine-vision/service/download)下载并安装。
 
 ## 📦 编译指南
@@ -24,6 +24,7 @@
 
     ```bash
     # 假设你的工作区在 ~/ros2_ws
+    source /opt/ros/humble/setup.zsh
     cd ~/ros2_ws/src
     git clone [你的Git仓库URL]
     ```
@@ -51,14 +52,15 @@
 
 1.  **配置参数**:
     打开文件 `config/camera_params.yaml`，修改以下关键参数：
-    - `camera_ip`: **必须**修改为你相机的实际IP地址。
+    - `camera_sn`: **必须**修改为你相机的实际Serial Number。
     - `camera_info_url`: (可选) 相机标定文件的路径。
 
 2.  **Source工作区**:
     在**新的终端**中，source你的工作区配置文件。
 
     ```bash
-    source ./install/local_setup.zsh //.bash or .ps1
+    source ./install/local_setup.zsh
+    #.bash or .ps1
     ```
 
 3.  **启动相机节点**:

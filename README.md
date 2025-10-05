@@ -24,7 +24,10 @@
 
     ```bash
     # 假设你的工作区在 ~/ros2_ws
+<<<<<<< HEAD
     source /opt/ros/humble/setup.zsh
+=======
+>>>>>>> 1939596 (Revised commit: Augmented multi-pixel-format support.)
     cd ~/ros2_ws/src
     git clone [你的Git仓库URL]
     ```

@@ -1,0 +1,61 @@
+-- Found ament_cmake: 1.3.12 (/opt/ros/humble/share/ament_cmake/cmake)
+-- Found rclcpp: 16.0.15 (/opt/ros/humble/share/rclcpp/cmake)
+-- Found rosidl_generator_c: 3.1.7 (/opt/ros/humble/share/rosidl_generator_c/cmake)
+-- Found rosidl_adapter: 3.1.7 (/opt/ros/humble/share/rosidl_adapter/cmake)
+-- Found rosidl_generator_cpp: 3.1.7 (/opt/ros/humble/share/rosidl_generator_cpp/cmake)
+-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+-- Found rmw_implementation_cmake: 6.1.2 (/opt/ros/humble/share/rmw_implementation_cmake/cmake)
+-- Found rmw_fastrtps_cpp: 6.2.8 (/opt/ros/humble/share/rmw_fastrtps_cpp/cmake)
+-- Using RMW implementation 'rmw_fastrtps_cpp' as default
+-- Found sensor_msgs: 4.9.0 (/opt/ros/humble/share/sensor_msgs/cmake)
+-- Found image_transport: 3.1.12 (/opt/ros/humble/share/image_transport/cmake)
+-- Found cv_bridge: 3.2.1 (/opt/ros/humble/share/cv_bridge/cmake)
+-- Found camera_info_manager: 3.1.12 (/opt/ros/humble/share/camera_info_manager/cmake)
+-- Using MVS SDK from local path: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/src/hik_camera_ros2/external/MVS
+-- Found MVS include directory: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/src/hik_camera_ros2/external/MVS/include
+-- Found MVS library: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/src/hik_camera_ros2/external/MVS/lib/64/libMvCameraControl.so
+-- Found ament_lint_auto: 0.12.14 (/opt/ros/humble/share/ament_lint_auto/cmake)
+-- Added test 'cppcheck' to perform static code analysis on C / C++ code
+-- Configured cppcheck include dirs: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/src/hik_camera_ros2/external/MVS/include;/home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/src/hik_camera_ros2/include
+-- Configured cppcheck exclude dirs and/or files: 
+-- Added test 'flake8' to check Python code syntax and style conventions
+-- Added test 'lint_cmake' to check CMake code style
+-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+-- Added test 'uncrustify' to check C / C++ code style
+-- Configured uncrustify additional arguments: 
+-- Added test 'xmllint' to check XML markup files
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/build/hik_camera_ros2
+[ 50%] [32mBuilding CXX object CMakeFiles/hik_camera_node.dir/src/hik_camera_node.cpp.o[0m
+[01m[K/home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/src/hik_camera_ros2/src/hik_camera_node.cpp:[m[K In member function ‘[01m[Kvoid hikcam::HikCameraNode::grab_loop()[m[K’:
+[01m[K/home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/src/hik_camera_ros2/src/hik_camera_node.cpp:246:18:[m[K [01;35m[Kwarning: [m[Kcomparison of integer expressions of different signedness: ‘[01m[Kint[m[K’ and ‘[01m[Kunsigned int[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wsign-compare-Wsign-compare]8;;[m[K]
+  246 |         if (nRet != MV_E_GC_TIMEOUT) {
+[100%] [32m[1mLinking CXX executable hik_camera_node[0m
+[100%] Built target hik_camera_node
+-- Install configuration: ""
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/lib/hik_camera_ros2/hik_camera_node
+-- Set runtime path of "/home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/lib/hik_camera_ros2/hik_camera_node" to ""
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/include
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/include/hik_camera_ros2
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/include/hik_camera_ros2/hik_camera_node.hpp
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/launch
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/launch/hik_camera.launch.py
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/config
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/config/camera_params.yaml
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/ament_index/resource_index/package_run_dependencies/hik_camera_ros2
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/ament_index/resource_index/parent_prefix_path/hik_camera_ros2
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/environment/ament_prefix_path.sh
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/environment/ament_prefix_path.dsv
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/environment/path.sh
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/environment/path.dsv
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/local_setup.bash
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/local_setup.sh
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/local_setup.zsh
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/local_setup.dsv
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/package.dsv
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/ament_index/resource_index/packages/hik_camera_ros2
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/cmake/hik_camera_ros2Config.cmake
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/cmake/hik_camera_ros2Config-version.cmake
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/package.xml

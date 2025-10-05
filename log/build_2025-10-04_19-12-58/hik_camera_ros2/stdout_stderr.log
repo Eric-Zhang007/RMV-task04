@@ -1,0 +1,29 @@
+[35m[1mConsolidate compiler generated dependencies of target hik_camera_node[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/hik_camera_node.dir/src/hik_camera_node.cpp.o[0m
+[100%] [32m[1mLinking CXX executable hik_camera_node[0m
+[100%] Built target hik_camera_node
+-- Install configuration: ""
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/lib/hik_camera_ros2/hik_camera_node
+-- Set runtime path of "/home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/lib/hik_camera_ros2/hik_camera_node" to ""
+-- Up-to-date: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/include
+-- Up-to-date: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/include/hik_camera_ros2
+-- Up-to-date: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/include/hik_camera_ros2/hik_camera_node.hpp
+-- Up-to-date: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/launch
+-- Up-to-date: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/launch/hik_camera.launch.py
+-- Up-to-date: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/config
+-- Up-to-date: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/config/camera_params.yaml
+-- Up-to-date: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/ament_index/resource_index/package_run_dependencies/hik_camera_ros2
+-- Up-to-date: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/ament_index/resource_index/parent_prefix_path/hik_camera_ros2
+-- Up-to-date: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/environment/ament_prefix_path.sh
+-- Up-to-date: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/environment/path.sh
+-- Up-to-date: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/environment/path.dsv
+-- Up-to-date: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/local_setup.bash
+-- Up-to-date: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/local_setup.sh
+-- Up-to-date: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/local_setup.zsh
+-- Up-to-date: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/local_setup.dsv
+-- Installing: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/package.dsv
+-- Up-to-date: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/ament_index/resource_index/packages/hik_camera_ros2
+-- Up-to-date: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/cmake/hik_camera_ros2Config.cmake
+-- Up-to-date: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/cmake/hik_camera_ros2Config-version.cmake
+-- Up-to-date: /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/install/hik_camera_ros2/share/hik_camera_ros2/package.xml

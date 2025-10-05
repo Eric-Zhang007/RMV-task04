@@ -7,7 +7,7 @@ namespace hikcam
 using namespace std::chrono_literals;
 using std::placeholders::_1;
 
-// CORRECTED: Pixel format translator with valid SDK enum names
+
 MvGvspPixelType string_to_pixel_format(const std::string& format_str)
 {
     if (format_str == "Mono8") return PixelType_Gvsp_Mono8;
@@ -18,7 +18,6 @@ MvGvspPixelType string_to_pixel_format(const std::string& format_str)
     if (format_str == "Mono12") return PixelType_Gvsp_Mono12;
     if (format_str == "BayerRG10") return PixelType_Gvsp_BayerRG10;
     if (format_str == "BayerRG12") return PixelType_Gvsp_BayerRG12;
-    // Note: The screenshot shows two YUV422 formats. YUV422_Packed is the common one.
     if (format_str == "YUV422_Packed") return PixelType_Gvsp_YUV422_Packed;
     return PixelType_Gvsp_Undefined;
 }
@@ -69,7 +68,7 @@ void HikCameraNode::declare_ros_parameters()
   this->get_parameter("exposure_time", exposure_time_);
   this->get_parameter("gain", gain_);
   this->get_parameter("frame_rate", frame_rate_);
-  this->get_parameter("pixel_format", pixel_format_); // CORRECTED: This was missing before
+  this->get_parameter("pixel_format", pixel_format_); 
 }
 
 bool HikCameraNode::connect()
@@ -253,7 +252,7 @@ rcl_interfaces::msg::SetParametersResult HikCameraNode::parameters_callback(
       MV_CC_SetFloatValue(handle_, "AcquisitionFrameRate", frame_rate_);
     }
   }
-  return result; // CORRECTED: Added the missing return statement
+  return result;
 }
 
 bool HikCameraNode::convert_to_ros_image(

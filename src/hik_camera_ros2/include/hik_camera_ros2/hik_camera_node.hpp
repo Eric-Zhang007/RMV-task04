@@ -36,15 +36,15 @@ private:
   std::unique_ptr<unsigned char[]> p_data_buffer_ = nullptr;
   unsigned int n_data_size_ = 0;
 
-  // --- Parameters ---
+  //Parameters
   std::string camera_sn_ = "";
   std::string camera_info_url_ = "";
   double exposure_time_ = 2000.0;
   double gain_ = 5.0;
   double frame_rate_ = 20.0;
-  std::string pixel_format_ = "BayerRG8"; // <-- THE MISSING VARIABLE
+  std::string pixel_format_ = "BayerRG8";
 
-  // --- Core Functions ---
+  //Core Functions
   bool connect();
   void disconnect();
   void grab_loop();
@@ -61,4 +61,4 @@ private:
 
 }  // namespace hikcam
 
-#endif  // HIK_CAMERA_NODE_HPP_
+#endif

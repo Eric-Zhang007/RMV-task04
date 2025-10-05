@@ -1,4 +1,0 @@
-Invoking command in '/home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/build/hik_camera_ros2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/build/hik_camera_ros2 -- -j20 -l20
-Invoked command in '/home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/build/hik_camera_ros2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --build /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/build/hik_camera_ros2 -- -j20 -l20
-Invoking command in '/home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/build/hik_camera_ros2': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/build/hik_camera_ros2
-Invoked command in '/home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/build/hik_camera_ros2' returned '0': CMAKE_PREFIX_PATH=/opt/ros/humble /usr/bin/cmake --install /home/eric/RMVcode/RMV-task4/ROS-HIk_MVS-SDK/build/hik_camera_ros2

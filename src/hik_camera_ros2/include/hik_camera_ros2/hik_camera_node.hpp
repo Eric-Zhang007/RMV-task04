@@ -38,7 +38,7 @@ private:
   std::unique_ptr<unsigned char[]> p_data_buffer_ = nullptr;
   unsigned int n_data_size_ = 0;
 
-  std::string camera_ip_ = "";
+  std::string camera_sn_ = "";
   std::string camera_info_url_ = "";
   double exposure_time_ = 2000.0;
   double gain_ = 5.0;

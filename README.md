@@ -15,7 +15,7 @@
 - Ubuntu 22.04
 - ROS2 Humble
 - OpenCV
-- MVS Runtime: 虽然项目编译**不依赖**外部SDK，但**运行时**目标机器上需要安装海康MVS的**运行库(Runtime)**。请从[海康机器人官网](https://www.hikrobotics.com/cn/machine-vision/service/download)下载并安装。
+- MVS Runtime: 虽然项目编译**不依赖**外部SDK，但**运行时**目标机器上需要安装海康MVS的**运行库(Runtime)**。请从[海康机器人官网](https://www.hikrobotics.com/cn/machinevision/service/download/?module=0)下载并安装。
 
 ## 编译指南
 

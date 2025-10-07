@@ -37,6 +37,8 @@ HikCameraNode::HikCameraNode(const rclcpp::NodeOptions & options)
   image_pub_ = image_transport::create_camera_publisher(this, "image_raw");
   param_callback_handle_ = this->add_on_set_parameters_callback(
     std::bind(&HikCameraNode::parameters_callback, this, _1));
+  frame_rate_pub_ = this->create_publisher<std_msgs::msg::Float32>("actual_frame_rate", 10);
+  frame_rate_timer_ = this->create_wall_timer(1s, std::bind(&HikCameraNode::publish_actual_frame_rate, this));
   
   if (!this->connect()) {
       RCLCPP_ERROR(this->get_logger(), "Initial connection failed. Activating reconnect timer.");
@@ -69,6 +71,14 @@ void HikCameraNode::declare_ros_parameters()
   this->get_parameter("gain", gain_);
   this->get_parameter("frame_rate", frame_rate_);
   this->get_parameter("pixel_format", pixel_format_); 
+  this->declare_parameter<int>("roi_width", -1);
+  this->declare_parameter<int>("roi_height", -1);
+  this->declare_parameter<int>("roi_offset_x", -1);
+  this->declare_parameter<int>("roi_offset_y", -1);
+  this->get_parameter("roi_width", roi_width_);
+  this->get_parameter("roi_height", roi_height_);
+  this->get_parameter("roi_offset_x", roi_offset_x_);
+  this->get_parameter("roi_offset_y", roi_offset_y_);
 }
 
 bool HikCameraNode::connect()
@@ -220,6 +230,36 @@ bool HikCameraNode::apply_all_parameters()
       }
   }
 
+  if (roi_offset_x_ != -1) {
+  // Note: The parameter name for MVS SDK is "OffsetX"
+  nRet = MV_CC_SetIntValue(handle_, "OffsetX", roi_offset_x_);
+    if(nRet != MV_OK) {
+        RCLCPP_WARN(this->get_logger(), "Failed to set OffsetX. Error: [0x%x]", nRet);
+        all_success = false;
+    }
+  }
+  if (roi_offset_y_ != -1) {
+    nRet = MV_CC_SetIntValue(handle_, "OffsetY", roi_offset_y_);
+    if(nRet != MV_OK) {
+        RCLCPP_WARN(this->get_logger(), "Failed to set OffsetY. Error: [0x%x]", nRet);
+        all_success = false;
+    }
+  }
+  if (roi_width_ != -1) {
+    nRet = MV_CC_SetIntValue(handle_, "Width", roi_width_);
+    if(nRet != MV_OK) {
+        RCLCPP_WARN(this->get_logger(), "Failed to set Width. Error: [0x%x]", nRet);
+        all_success = false;
+    }
+  }
+  if (roi_height_ != -1) {
+    nRet = MV_CC_SetIntValue(handle_, "Height", roi_height_);
+    if(nRet != MV_OK) {
+        RCLCPP_WARN(this->get_logger(), "Failed to set Height. Error: [0x%x]", nRet);
+        all_success = false;
+    }
+  }
+
   nRet = MV_CC_SetFloatValue(handle_, "ExposureTime", exposure_time_);
   if(nRet != MV_OK) { all_success = false; }
   nRet = MV_CC_SetFloatValue(handle_, "Gain", gain_);
@@ -308,9 +348,34 @@ bool HikCameraNode::convert_to_ros_image(
   }
 }
 
+void HikCameraNode::publish_actual_frame_rate()
+{
+    if (handle_ == nullptr || !is_grabbing_) {
+        return;
+    }
+    std::lock_guard<std::mutex> lock(mutex_);
+    MVCC_FLOATVALUE stFloatValue;
+    memset(&stFloatValue, 0, sizeof(MVCC_FLOATVALUE));
+    int nRet = MV_CC_GetFloatValue(handle_, "ResultingFrameRate", &stFloatValue);
+
+    if (nRet == MV_OK)
+    {
+        auto msg = std_msgs::msg::Float32();
+        msg.data = stFloatValue.fCurValue;
+        frame_rate_pub_->publish(msg);
+    }
+    else
+    {
+        RCLCPP_WARN_ONCE(
+            this->get_logger(), 
+            "Failed to get actual frame rate from camera. Error code: [0x%x]", nRet);
+    }
+}
+
 } // namespace hikcam
 
 #include "rclcpp/rclcpp.hpp"
+
 
 int main(int argc, char * argv[])
 {

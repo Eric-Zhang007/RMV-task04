@@ -9,3 +9,7 @@ hik_camera:
     frame_rate: 60.0
     pixel_format: "BayerRG8"
     #Optional: BayerRG8 BayerRG10 BayerRG12 Mono8 Mono12 YUV422_Packed RGB8 BGR8
+    roi_width: -1
+    roi_height: -1
+    roi_offset_x: -1
+    roi_offset_y: -1

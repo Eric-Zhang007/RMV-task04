@@ -12,6 +12,7 @@
 
 #include <opencv2/opencv.hpp>
 #include "MvCameraControl.h"
+#include "std_msgs/msg/float32.hpp"
 
 namespace hikcam
 {
@@ -27,6 +28,8 @@ private:
   std::shared_ptr<camera_info_manager::CameraInfoManager> camera_info_manager_;
   rclcpp::TimerBase::SharedPtr reconnect_timer_;
   OnSetParametersCallbackHandle::SharedPtr param_callback_handle_;
+  rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr frame_rate_pub_;
+  rclcpp::TimerBase::SharedPtr frame_rate_timer_;
 
   void* handle_ = nullptr;
   std::thread grab_thread_;
@@ -43,6 +46,10 @@ private:
   double gain_ = 5.0;
   double frame_rate_ = 20.0;
   std::string pixel_format_ = "BayerRG8";
+  int roi_width_ = -1;
+  int roi_height_ = -1;
+  int roi_offset_x_ = -1;
+  int roi_offset_y_ = -1;
 
   //Core Functions
   bool connect();
@@ -57,6 +64,7 @@ private:
     unsigned char * pData, 
     MV_FRAME_OUT_INFO_EX * pFrameInfo, 
     sensor_msgs::msg::Image & ros_image);
+  void publish_actual_frame_rate();
 };
 
 }  // namespace hikcam

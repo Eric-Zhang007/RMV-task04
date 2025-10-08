@@ -1,5 +1,6 @@
 #include "hik_camera_ros2/hik_camera_node.hpp"
 #include <chrono>
+#include <iostream>
 
 namespace hikcam
 {

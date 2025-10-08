@@ -103,3 +103,7 @@
       ros2 param set /hik_camera exposure_time 8000.0
       ```
       (观察RViz2中的图像，亮度会发生实时变化)
+    - 
+      ```bash
+      ros2 param set /hik_camera frame_rate 20.0
+      ```

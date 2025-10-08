@@ -1,6 +1,6 @@
 # ROS2 Driver for Hikvision MVS Cameras
 
-这是一个为海康威视机器视觉工业相机 (Hikvision MVS) 开发的ROS2 Humble功能包。它通过封装官方的MVS SDK，使得在ROS2项目中使用海康相机变得简单高效。This project has been checked offline.
+这是一个为海康威视机器视觉工业相机 (Hikvision MVS) 开发的ROS2 Humble功能包。它通过封装官方的MVS SDK，使得在ROS2项目中使用海康相机变得简单高效。**This project has been checked offline.**
 
 ## 核心功能
 

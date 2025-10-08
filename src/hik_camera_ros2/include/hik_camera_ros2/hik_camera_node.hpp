@@ -9,6 +9,7 @@
 #include <thread>
 #include <mutex>
 #include <memory>
+#include <atomic>
 
 #include <opencv2/opencv.hpp>
 #include "MvCameraControl.h"
@@ -30,6 +31,8 @@ private:
   OnSetParametersCallbackHandle::SharedPtr param_callback_handle_;
   rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr frame_rate_pub_;
   rclcpp::TimerBase::SharedPtr frame_rate_timer_;
+  std::atomic<int> frame_counter_{0};
+  rclcpp::Time last_frame_rate_time_;
 
   void* handle_ = nullptr;
   std::thread grab_thread_;

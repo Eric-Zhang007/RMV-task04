@@ -39,7 +39,7 @@ HikCameraNode::HikCameraNode(const rclcpp::NodeOptions & options)
     std::bind(&HikCameraNode::parameters_callback, this, _1));
   frame_rate_pub_ = this->create_publisher<std_msgs::msg::Float32>("actual_frame_rate", 10);
   frame_rate_timer_ = this->create_wall_timer(1s, std::bind(&HikCameraNode::publish_actual_frame_rate, this));
-  
+  last_frame_rate_time_ = this->now();
   if (!this->connect()) {
       RCLCPP_ERROR(this->get_logger(), "Initial connection failed. Activating reconnect timer.");
       reconnect_timer_ = this->create_wall_timer(2s, std::bind(&HikCameraNode::connect, this));
@@ -193,6 +193,7 @@ void HikCameraNode::grab_loop()
             ros_image.header.frame_id = "camera_frame";
             camera_info_msg.header = ros_image.header;
             image_pub_.publish(ros_image, camera_info_msg);
+            frame_counter_++;
         }
       }
     } else {
@@ -348,7 +349,7 @@ bool HikCameraNode::convert_to_ros_image(
   }
 }
 
-void HikCameraNode::publish_actual_frame_rate()
+/*void HikCameraNode::publish_actual_frame_rate()
 {
     if (handle_ == nullptr || !is_grabbing_) {
         return;
@@ -370,6 +371,21 @@ void HikCameraNode::publish_actual_frame_rate()
             this->get_logger(), 
             "Failed to get actual frame rate from camera. Error code: [0x%x]", nRet);
     }
+}*/
+void HikCameraNode::publish_actual_frame_rate()
+{
+    rclcpp::Time current_time = this->now();
+    double dt = (current_time - last_frame_rate_time_).seconds();
+    int frame_count = frame_counter_.exchange(0);
+    if (dt > 0.0)
+    {
+        double frame_rate = static_cast<double>(frame_count) / dt;
+        auto msg = std_msgs::msg::Float32();
+        msg.data = frame_rate;
+        RCLCPP_INFO(this->get_logger(), "Publishing actual frame rate: %.2f", frame_rate);
+        frame_rate_pub_->publish(msg);
+    }
+    last_frame_rate_time_ = current_time;
 }
 
 } // namespace hikcam
